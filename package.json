@@ -1,0 +1,28 @@
+{
+  "name": "deadlinks",
+  "version": "1.0.0",
+  "description": "Scan Markdown/HTML for broken http(s) links — zero deps CLI",
+  "type": "module",
+  "bin": {
+    "deadlinks": "./bin/deadlinks.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "keywords": [
+    "links",
+    "markdown",
+    "ci",
+    "cli",
+    "broken-links"
+  ],
+  "author": "Kian Zarandi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kianPk/deadlinks.git"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
