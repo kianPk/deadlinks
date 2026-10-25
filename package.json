@@ -1,6 +1,6 @@
 {
   "name": "deadlinks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Scan Markdown/HTML for broken http(s) links — zero deps CLI",
   "type": "module",
   "bin": {

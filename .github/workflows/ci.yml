@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node --check bin/deadlinks.js
+      - name: smoke scan
+        run: |
+          node bin/deadlinks.js README.md --timeout 15000 --json | node -e "
+            const d=JSON.parse(require('fs').readFileSync(0,'utf8'));
+            if (typeof d.ok !== 'number') process.exit(1);
+            if (d.unique_urls < 1) process.exit(1);
+          "
